@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal
 {
-    class Conexion
+    public class Conexion
     {
         SqlConnection cn;
         SqlCommand cmd;

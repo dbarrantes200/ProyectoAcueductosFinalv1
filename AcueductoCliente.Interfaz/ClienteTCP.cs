@@ -50,5 +50,18 @@ namespace AcueductoCliente.Interfaz
             return true;
         }
 
+        public static void Desconectar(string pIdentificadorCliente)
+        {
+            MensajeSocket<string> mensajeDesconectar = new MensajeSocket<string> { Metodo = "Desconectar", Entidad = pIdentificadorCliente };
+
+            clienteStreamWriter.WriteLine(JsonConvert.SerializeObject(mensajeDesconectar));
+            clienteStreamWriter.Flush();
+            //Se cierra la conexión del cliente
+            cliente.Close();
+        }
+
+
     }
+
+
 }

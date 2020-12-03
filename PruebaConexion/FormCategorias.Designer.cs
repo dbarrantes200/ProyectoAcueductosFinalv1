@@ -29,6 +29,9 @@ namespace ProyectoFinal
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GrabarCategorias = new System.Windows.Forms.GroupBox();
             this.RbModificar = new System.Windows.Forms.RadioButton();
             this.RbEliminar = new System.Windows.Forms.RadioButton();
@@ -41,7 +44,9 @@ namespace ProyectoFinal
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.DgvClientes = new System.Windows.Forms.DataGridView();
             this.GrabarCategorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // GrabarCategorias
@@ -167,7 +172,7 @@ namespace ProyectoFinal
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(465, 519);
+            this.button5.Location = new System.Drawing.Point(497, 863);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(218, 61);
             this.button5.TabIndex = 24;
@@ -175,12 +180,50 @@ namespace ProyectoFinal
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // DgvClientes
+            // 
+            this.DgvClientes.AllowUserToAddRows = false;
+            this.DgvClientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvClientes.Location = new System.Drawing.Point(6, 476);
+            this.DgvClientes.Margin = new System.Windows.Forms.Padding(6);
+            this.DgvClientes.Name = "DgvClientes";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvClientes.RowHeadersVisible = false;
+            this.DgvClientes.RowHeadersWidth = 82;
+            this.DgvClientes.Size = new System.Drawing.Size(1262, 301);
+            this.DgvClientes.TabIndex = 25;
+            // 
             // FormCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1156, 702);
+            this.ClientSize = new System.Drawing.Size(1308, 1030);
+            this.Controls.Add(this.DgvClientes);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label2);
@@ -194,6 +237,7 @@ namespace ProyectoFinal
             this.Text = "FormCategorias";
             this.GrabarCategorias.ResumeLayout(false);
             this.GrabarCategorias.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +257,6 @@ namespace ProyectoFinal
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView DgvClientes;
     }
 }

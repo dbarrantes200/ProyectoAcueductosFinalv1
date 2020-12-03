@@ -37,6 +37,8 @@ namespace AcueductoCliente.Interfaz
             this.btnConectar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMaestros = new System.Windows.Forms.Button();
+            this.btnConsultaMonto = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +86,7 @@ namespace AcueductoCliente.Interfaz
             this.txtIdentificador.Name = "txtIdentificador";
             this.txtIdentificador.Size = new System.Drawing.Size(196, 31);
             this.txtIdentificador.TabIndex = 8;
+            this.txtIdentificador.Leave += new System.EventHandler(this.txtIdentificador_TextChanged);
             // 
             // btnDesconectar
             // 
@@ -94,6 +97,7 @@ namespace AcueductoCliente.Interfaz
             this.btnDesconectar.TabIndex = 7;
             this.btnDesconectar.Text = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = true;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // btnConectar
             // 
@@ -119,7 +123,7 @@ namespace AcueductoCliente.Interfaz
             // 
             // btnMaestros
             // 
-            this.btnMaestros.Location = new System.Drawing.Point(446, 386);
+            this.btnMaestros.Location = new System.Drawing.Point(145, 391);
             this.btnMaestros.Name = "btnMaestros";
             this.btnMaestros.Size = new System.Drawing.Size(439, 177);
             this.btnMaestros.TabIndex = 1;
@@ -127,11 +131,33 @@ namespace AcueductoCliente.Interfaz
             this.btnMaestros.UseVisualStyleBackColor = true;
             this.btnMaestros.Click += new System.EventHandler(this.btnMaestros_Click);
             // 
+            // btnConsultaMonto
+            // 
+            this.btnConsultaMonto.Location = new System.Drawing.Point(711, 391);
+            this.btnConsultaMonto.Name = "btnConsultaMonto";
+            this.btnConsultaMonto.Size = new System.Drawing.Size(439, 177);
+            this.btnConsultaMonto.TabIndex = 2;
+            this.btnConsultaMonto.Text = "Consulta Monto a Cancelar";
+            this.btnConsultaMonto.UseVisualStyleBackColor = true;
+            this.btnConsultaMonto.Click += new System.EventHandler(this.btnConsultaMonto_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(545, 642);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(220, 57);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 744);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConsultaMonto);
             this.Controls.Add(this.btnMaestros);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCliente";
@@ -152,6 +178,8 @@ namespace AcueductoCliente.Interfaz
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMaestros;
+        private System.Windows.Forms.Button btnConsultaMonto;
+        private System.Windows.Forms.Button button1;
     }
 }
 
