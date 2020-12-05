@@ -30,19 +30,27 @@ namespace AcueductoCliente.Interfaz
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbNumeroNIS = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textCategoria = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textApellido2 = new System.Windows.Forms.TextBox();
+            this.textApellido1 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textMesActual = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textConsumo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textTarifa = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,6 +61,7 @@ namespace AcueductoCliente.Interfaz
             this.textIVA = new System.Windows.Forms.TextBox();
             this.textMontoPagar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,10 +76,10 @@ namespace AcueductoCliente.Interfaz
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta Monto a Cancelar";
             // 
-            // comboBox1
+            // cbMes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbMes.FormattingEnabled = true;
+            this.cbMes.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -83,15 +92,15 @@ namespace AcueductoCliente.Interfaz
             "10",
             "11",
             "12"});
-            this.comboBox1.Location = new System.Drawing.Point(476, 258);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
-            this.comboBox1.TabIndex = 1;
+            this.cbMes.Location = new System.Drawing.Point(871, 36);
+            this.cbMes.Name = "cbMes";
+            this.cbMes.Size = new System.Drawing.Size(100, 33);
+            this.cbMes.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(281, 266);
+            this.label2.Location = new System.Drawing.Point(798, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 25);
             this.label2.TabIndex = 2;
@@ -100,7 +109,7 @@ namespace AcueductoCliente.Interfaz
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(281, 185);
+            this.label3.Location = new System.Drawing.Point(8, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 25);
             this.label3.TabIndex = 3;
@@ -109,15 +118,16 @@ namespace AcueductoCliente.Interfaz
             // cbNumeroNIS
             // 
             this.cbNumeroNIS.FormattingEnabled = true;
-            this.cbNumeroNIS.Location = new System.Drawing.Point(476, 182);
+            this.cbNumeroNIS.Location = new System.Drawing.Point(184, 39);
             this.cbNumeroNIS.Name = "cbNumeroNIS";
             this.cbNumeroNIS.Size = new System.Drawing.Size(121, 33);
             this.cbNumeroNIS.TabIndex = 4;
+            this.cbNumeroNIS.SelectedIndexChanged += new System.EventHandler(this.cbNumeroNIS_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(281, 123);
+            this.label4.Location = new System.Drawing.Point(331, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 25);
             this.label4.TabIndex = 5;
@@ -125,7 +135,7 @@ namespace AcueductoCliente.Interfaz
             // 
             // textCliente
             // 
-            this.textCliente.Location = new System.Drawing.Point(476, 123);
+            this.textCliente.Location = new System.Drawing.Point(419, 39);
             this.textCliente.Name = "textCliente";
             this.textCliente.Size = new System.Drawing.Size(121, 31);
             this.textCliente.TabIndex = 6;
@@ -133,12 +143,93 @@ namespace AcueductoCliente.Interfaz
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupBox1.Controls.Add(this.textCategoria);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.textApellido2);
+            this.groupBox1.Controls.Add(this.textApellido1);
+            this.groupBox1.Controls.Add(this.textNombre);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.cbMes);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cbNumeroNIS);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textCliente);
             this.groupBox1.Location = new System.Drawing.Point(75, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(990, 223);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.groupBox1.Size = new System.Drawing.Size(990, 170);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Cliente";
+            // 
+            // textCategoria
+            // 
+            this.textCategoria.Location = new System.Drawing.Point(684, 33);
+            this.textCategoria.Name = "textCategoria";
+            this.textCategoria.ReadOnly = true;
+            this.textCategoria.Size = new System.Drawing.Size(93, 31);
+            this.textCategoria.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(562, 36);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 25);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Categoria";
+            // 
+            // textApellido2
+            // 
+            this.textApellido2.Location = new System.Drawing.Point(470, 102);
+            this.textApellido2.Name = "textApellido2";
+            this.textApellido2.ReadOnly = true;
+            this.textApellido2.Size = new System.Drawing.Size(121, 31);
+            this.textApellido2.TabIndex = 26;
+            // 
+            // textApellido1
+            // 
+            this.textApellido1.Location = new System.Drawing.Point(330, 102);
+            this.textApellido1.Name = "textApellido1";
+            this.textApellido1.ReadOnly = true;
+            this.textApellido1.Size = new System.Drawing.Size(121, 31);
+            this.textApellido1.TabIndex = 25;
+            // 
+            // textNombre
+            // 
+            this.textNombre.Location = new System.Drawing.Point(184, 102);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.ReadOnly = true;
+            this.textNombre.Size = new System.Drawing.Size(121, 31);
+            this.textNombre.TabIndex = 24;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 105);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 25);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Nombre:";
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(898, 811);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(176, 33);
+            this.cbCliente.TabIndex = 22;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(759, 581);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(237, 72);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Calcular";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -156,6 +247,7 @@ namespace AcueductoCliente.Interfaz
             this.textMesActual.ReadOnly = true;
             this.textMesActual.Size = new System.Drawing.Size(121, 31);
             this.textMesActual.TabIndex = 9;
+            this.textMesActual.Text = "0";
             // 
             // label6
             // 
@@ -183,13 +275,14 @@ namespace AcueductoCliente.Interfaz
             this.label7.TabIndex = 12;
             this.label7.Text = "Tarifa";
             // 
-            // textBox1
+            // textTarifa
             // 
-            this.textBox1.Location = new System.Drawing.Point(652, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(121, 31);
-            this.textBox1.TabIndex = 13;
+            this.textTarifa.Location = new System.Drawing.Point(652, 111);
+            this.textTarifa.Name = "textTarifa";
+            this.textTarifa.ReadOnly = true;
+            this.textTarifa.Size = new System.Drawing.Size(121, 31);
+            this.textTarifa.TabIndex = 13;
+            this.textTarifa.Text = "0";
             // 
             // label8
             // 
@@ -227,7 +320,7 @@ namespace AcueductoCliente.Interfaz
             this.groupBox2.Controls.Add(this.textMesActual);
             this.groupBox2.Controls.Add(this.textConsumo);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textTarifa);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(75, 332);
             this.groupBox2.Name = "groupBox2";
@@ -243,6 +336,7 @@ namespace AcueductoCliente.Interfaz
             this.textMesAnterior.ReadOnly = true;
             this.textMesAnterior.Size = new System.Drawing.Size(121, 31);
             this.textMesAnterior.TabIndex = 14;
+            this.textMesAnterior.Text = "0";
             // 
             // label11
             // 
@@ -260,6 +354,7 @@ namespace AcueductoCliente.Interfaz
             this.textMontoAntesIVA.ReadOnly = true;
             this.textMontoAntesIVA.Size = new System.Drawing.Size(121, 31);
             this.textMontoAntesIVA.TabIndex = 18;
+            this.textMontoAntesIVA.Text = "0";
             // 
             // textIVA
             // 
@@ -268,13 +363,16 @@ namespace AcueductoCliente.Interfaz
             this.textIVA.ReadOnly = true;
             this.textIVA.Size = new System.Drawing.Size(121, 31);
             this.textIVA.TabIndex = 19;
+            this.textIVA.Text = "0";
             // 
             // textMontoPagar
             // 
             this.textMontoPagar.Location = new System.Drawing.Point(390, 672);
             this.textMontoPagar.Name = "textMontoPagar";
+            this.textMontoPagar.ReadOnly = true;
             this.textMontoPagar.Size = new System.Drawing.Size(121, 31);
             this.textMontoPagar.TabIndex = 20;
+            this.textMontoPagar.Text = "0";
             // 
             // button1
             // 
@@ -291,25 +389,23 @@ namespace AcueductoCliente.Interfaz
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1160, 811);
+            this.ClientSize = new System.Drawing.Size(1160, 883);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.textMontoPagar);
             this.Controls.Add(this.textIVA);
             this.Controls.Add(this.textMontoAntesIVA);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textCliente);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbNumeroNIS);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "FrmMontoCancelar";
             this.Text = "Consulta Monto a Cancelar";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -320,7 +416,7 @@ namespace AcueductoCliente.Interfaz
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbNumeroNIS;
@@ -332,7 +428,7 @@ namespace AcueductoCliente.Interfaz
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textConsumo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textTarifa;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -343,5 +439,13 @@ namespace AcueductoCliente.Interfaz
         private System.Windows.Forms.TextBox textIVA;
         private System.Windows.Forms.TextBox textMontoPagar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.TextBox textApellido2;
+        private System.Windows.Forms.TextBox textApellido1;
+        private System.Windows.Forms.TextBox textNombre;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textCategoria;
+        private System.Windows.Forms.Label label13;
     }
 }
