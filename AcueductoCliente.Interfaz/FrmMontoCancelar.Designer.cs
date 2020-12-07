@@ -78,6 +78,7 @@ namespace AcueductoCliente.Interfaz
             // 
             // cbMes
             // 
+            this.cbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMes.FormattingEnabled = true;
             this.cbMes.Items.AddRange(new object[] {
             "1",
@@ -117,6 +118,7 @@ namespace AcueductoCliente.Interfaz
             // 
             // cbNumeroNIS
             // 
+            this.cbNumeroNIS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNumeroNIS.FormattingEnabled = true;
             this.cbNumeroNIS.Location = new System.Drawing.Point(184, 39);
             this.cbNumeroNIS.Name = "cbNumeroNIS";
@@ -137,6 +139,7 @@ namespace AcueductoCliente.Interfaz
             // 
             this.textCliente.Location = new System.Drawing.Point(419, 39);
             this.textCliente.Name = "textCliente";
+            this.textCliente.ReadOnly = true;
             this.textCliente.Size = new System.Drawing.Size(121, 31);
             this.textCliente.TabIndex = 6;
             // 
@@ -149,6 +152,7 @@ namespace AcueductoCliente.Interfaz
             this.groupBox1.Controls.Add(this.textApellido1);
             this.groupBox1.Controls.Add(this.textNombre);
             this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.cbCliente);
             this.groupBox1.Controls.Add(this.cbMes);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -157,7 +161,7 @@ namespace AcueductoCliente.Interfaz
             this.groupBox1.Controls.Add(this.textCliente);
             this.groupBox1.Location = new System.Drawing.Point(75, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox1.Size = new System.Drawing.Size(990, 170);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -209,14 +213,15 @@ namespace AcueductoCliente.Interfaz
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(13, 105);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 25);
+            this.label12.Size = new System.Drawing.Size(85, 25);
             this.label12.TabIndex = 23;
-            this.label12.Text = "Nombre:";
+            this.label12.Text = "Cliente:";
             // 
             // cbCliente
             // 
+            this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(898, 811);
+            this.cbCliente.Location = new System.Drawing.Point(635, 105);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(176, 33);
             this.cbCliente.TabIndex = 22;
@@ -230,6 +235,7 @@ namespace AcueductoCliente.Interfaz
             this.button2.TabIndex = 22;
             this.button2.Text = "Calcular";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
@@ -349,7 +355,7 @@ namespace AcueductoCliente.Interfaz
             // 
             // textMontoAntesIVA
             // 
-            this.textMontoAntesIVA.Location = new System.Drawing.Point(390, 540);
+            this.textMontoAntesIVA.Location = new System.Drawing.Point(390, 539);
             this.textMontoAntesIVA.Name = "textMontoAntesIVA";
             this.textMontoAntesIVA.ReadOnly = true;
             this.textMontoAntesIVA.Size = new System.Drawing.Size(121, 31);
@@ -396,7 +402,6 @@ namespace AcueductoCliente.Interfaz
             this.Controls.Add(this.textIVA);
             this.Controls.Add(this.textMontoAntesIVA);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);

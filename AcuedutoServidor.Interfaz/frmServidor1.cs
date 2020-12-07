@@ -1,30 +1,23 @@
 ﻿using AcueductoServidor.Entidades;
-using AcueductoCliente.Interfaz;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcuedutoServidor.Interfaz
 {
     public partial class frmServidor : Form
     {
-       // public static bool IndicarFormularioServidorIniciado;
+        // public static bool IndicarFormularioServidorIniciado;
         TcpListener tcpListener;
         Thread subprocesoEscuchaClientes;
         EscribirEnTextboxDelegado modificarTextotxtBitacora;
         ModoficarListBoxDelegado modificarListBoxClientes;
-       // DatosBiblioteca accesoDatos;
+        // DatosBiblioteca accesoDatos;
         bool servidorIniciado;
         public static bool IndicarFormularioServidorIniciado;
 
@@ -83,16 +76,28 @@ namespace AcuedutoServidor.Interfaz
 
         private void EscucharClientes()
         {
-            tcpListener.Start();
-            while (servidorIniciado)
+
+            try
             {
-                //Se bloquea hasta que un cliente se haya conectado al servidor 
-                TcpClient client = tcpListener.AcceptTcpClient();
-                /*Se crea un nuevo hilo para manejar la comunicación con los clientes que se conectan al servidor*/
-                Thread clientThread = new Thread(new ParameterizedThreadStart(ComunicacionCliente));
-                clientThread.Start(client);
-                clientThread.IsBackground = true;
+                tcpListener.Start();
+                while (servidorIniciado)
+                {
+                    //Se bloquea hasta que un cliente se haya conectado al servidor 
+                    TcpClient client = tcpListener.AcceptTcpClient();
+                    /*Se crea un nuevo hilo para manejar la comunicación con los clientes que se conectan al servidor*/
+                    Thread clientThread = new Thread(new ParameterizedThreadStart(ComunicacionCliente));
+                    clientThread.Start(client);
+                    clientThread.IsBackground = true;
+                }
+
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+
+
         }
 
         private void ComunicacionCliente(object cliente)
@@ -129,20 +134,9 @@ namespace AcuedutoServidor.Interfaz
                     MensajeSocket<string> mensajeConectar = JsonConvert.DeserializeObject<MensajeSocket<string>>(pMensaje);// Se deserializa el objeto recibido mediante json
                     Conectar(mensajeConectar.Entidad);
                     break;
-                case "AgregarAutor":
-                   // MensajeSocket<Autor> mensajeCrearAutor = JsonConvert.DeserializeObject<MensajeSocket<Autor>>(pMensaje);// Se deserializa el objeto recibido mediante json
-                   // AgregarAutor(mensajeCrearAutor.Entidad);
-                    break;
-                case "AgregarLibro":
-                 //   MensajeSocket<Libro> mensajeCrearLibro = JsonConvert.DeserializeObject<MensajeSocket<Libro>>(pMensaje);//Se deserializa el objeto recibido mediante json
-                    //AgregarLibro(mensajeCrearLibro.Entidad);
-                    break;
-                case "ObtenerAutores":
-                    //ObtenerAutores(ref servidorStreamWriter);
-                    break;
-                case "ObtenerLibrosDeAutor":
-                    MensajeSocket<string> mensajeObtenerLibrosDeAutor = JsonConvert.DeserializeObject<MensajeSocket<string>>(pMensaje);//Se deserializa el objeto recibido mediante json
-                    //ObtenerLibrosDeAutor(mensajeObtenerLibrosDeAutor.Entidad, ref servidorStreamWriter);
+                case "CalcularPago":
+                    // MensajeSocket<Autor> mensajeCalcularPago = JsonConvert.DeserializeObject<MensajeSocket<Cliente>>(pMensaje);// Se deserializa el objeto recibido mediante json
+                    // CalcularPago(mensajeFrmMontoCancelar.Entidad);
                     break;
                 case "Desconectar":
                     MensajeSocket<string> mensajeDesconectar = JsonConvert.DeserializeObject<MensajeSocket<string>>(pMensaje);//Se deserializa el objeto recibido mediante json

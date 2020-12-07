@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using ProyectoFinal;
 using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace AcueductoCliente.Interfaz
 {
@@ -15,11 +10,11 @@ namespace AcueductoCliente.Interfaz
         //Conexion con = new ProyectoFinal.Conexion();
         SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GOTA;Integrated Security=True");
 
-        
+
         // Cargar los NIS para crear la lista de valores de la lista del Historial de Consumos
         public void seleccionar(ComboBox cb)
         {
-           // Conexion con = new ProyectoFinal.Conexion();
+            // Conexion con = new ProyectoFinal.Conexion();
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GOTA;Integrated Security=True");
             cb.Items.Clear();
             con.Open();
@@ -58,7 +53,7 @@ namespace AcueductoCliente.Interfaz
 
 
 
-        // metodo para cargar clientes en el combo box
+        // metodo para cargar clientes en un combbox
         public void cargar_clientes(ComboBox clientes)
         {
             con.Open();
@@ -99,6 +94,11 @@ namespace AcueductoCliente.Interfaz
             return resultado;
         }
 
+        internal string montoCancelar(bool v1, int v2, int v3)
+        {
+            throw new NotImplementedException();
+        }
+
         // metodo para cargar categorias en el combo box
         public string[] captarNIS(string nis)
         {
@@ -125,11 +125,12 @@ namespace AcueductoCliente.Interfaz
         public int montoCancelar(int lecturaAnterior, int lecturaActual, int tarifa)
         {
             int montoAdeudado = (lecturaActual - lecturaAnterior) * tarifa;
-                                                                          
-           return(montoAdeudado);
+
+            return (montoAdeudado);
 
         }
-        
+
+
 
     }
 }

@@ -29,7 +29,12 @@ namespace AcueductoCliente.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gOTADataSet = new AcueductoCliente.Interfaz.GOTADataSet();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdentificador = new System.Windows.Forms.TextBox();
@@ -39,11 +44,16 @@ namespace AcueductoCliente.Interfaz
             this.btnMaestros = new System.Windows.Forms.Button();
             this.btnConsultaMonto = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cLIENTESTableAdapter = new AcueductoCliente.Interfaz.GOTADataSetTableAdapters.CLIENTESTableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gOTADataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtIdentificador);
@@ -56,6 +66,38 @@ namespace AcueductoCliente.Interfaz
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conexión con el servidor";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 200);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 26);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Clientes:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.cLIENTESBindingSource;
+            this.comboBox1.DisplayMember = "IDENTIFICACION";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(194, 200);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(209, 33);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.ValueMember = "IDENTIFICACION";
+            // 
+            // cLIENTESBindingSource
+            // 
+            this.cLIENTESBindingSource.DataMember = "CLIENTES";
+            this.cLIENTESBindingSource.DataSource = this.gOTADataSet;
+            // 
+            // gOTADataSet
+            // 
+            this.gOTADataSet.DataSetName = "GOTADataSet";
+            this.gOTADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblEstado
             // 
@@ -86,7 +128,6 @@ namespace AcueductoCliente.Interfaz
             this.txtIdentificador.Name = "txtIdentificador";
             this.txtIdentificador.Size = new System.Drawing.Size(196, 31);
             this.txtIdentificador.TabIndex = 8;
-            this.txtIdentificador.Leave += new System.EventHandler(this.txtIdentificador_TextChanged);
             // 
             // btnDesconectar
             // 
@@ -151,10 +192,15 @@ namespace AcueductoCliente.Interfaz
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cLIENTESTableAdapter
+            // 
+            this.cLIENTESTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1432, 744);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnConsultaMonto);
@@ -162,8 +208,11 @@ namespace AcueductoCliente.Interfaz
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCliente";
             this.Text = "Formulario Principal";
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gOTADataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,6 +229,11 @@ namespace AcueductoCliente.Interfaz
         private System.Windows.Forms.Button btnMaestros;
         private System.Windows.Forms.Button btnConsultaMonto;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private GOTADataSet gOTADataSet;
+        private System.Windows.Forms.BindingSource cLIENTESBindingSource;
+        private GOTADataSetTableAdapters.CLIENTESTableAdapter cLIENTESTableAdapter;
+        private System.Windows.Forms.Label label3;
     }
 }
 

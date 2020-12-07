@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal
 {
     public partial class FormHidrometros : Form
     {
+
         Conexion c = new Conexion();
         public FormHidrometros()
         {
             InitializeComponent();
+            c.cargar_clientes(cbCliente);
+            c.cargarHidrometros(DgvHidrometros);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -28,7 +24,7 @@ namespace ProyectoFinal
             txtNIS.Enabled = true;
             txtMarca.Enabled = true;
             txtSerie.Enabled = true;
-            txtCategoria.Enabled = true;
+            txtCat.Enabled = true;
             BtnAgregar.Enabled = true;
             BtnEliminar.Enabled = false;
             BtnModificar.Enabled = false;
@@ -39,7 +35,7 @@ namespace ProyectoFinal
             txtNIS.Enabled = true;
             txtMarca.Enabled = true;
             txtSerie.Enabled = true;
-            txtCategoria.Enabled = true;
+            txtCat.Enabled = true;
             txtCliente.Enabled = true;
             BtnAgregar.Enabled = false;
             BtnEliminar.Enabled = false;
@@ -51,7 +47,7 @@ namespace ProyectoFinal
             txtNIS.Enabled = true;
             txtMarca.Enabled = false;
             txtSerie.Enabled = false;
-            txtCategoria.Enabled = false;
+            txtCat.Enabled = false;
             txtCliente.Enabled = false;
             BtnAgregar.Enabled = false;
             BtnEliminar.Enabled = true;
@@ -62,13 +58,13 @@ namespace ProyectoFinal
         {
             if (c.hidrometroRegistrado(Convert.ToInt32(txtNIS.Text)) == 0)
             {
-                MessageBox.Show(c.insertarHidrometro(Convert.ToInt32(txtNIS.Text), txtMarca.Text, Convert.ToInt32(txtSerie.Text), txtCategoria.Text, txtCliente.Text));
+                MessageBox.Show(c.insertarHidrometro(Convert.ToInt32(txtNIS.Text), txtMarca.Text, Convert.ToInt32(txtSerie.Text), txtCat.Text, txtCliente.Text));
                 txtNIS.Text = "";
                 txtMarca.Text = "";
                 txtSerie.Text = "";
-                txtCategoria.Text = "";
+                txtCat.Text = "";
                 txtCliente.Text = "";
-           
+
             }
             else
             {
@@ -78,12 +74,33 @@ namespace ProyectoFinal
 
         private void FormHidrometros_Load(object sender, EventArgs e)
         {
-            c.llenarCategorias(cbCategoria);
+            c.llenarCategorias(cbCat);
         }
 
         private void txtCategoria_TextChanged(object sender, EventArgs e)
         {
-           // c.obtenerCodCategoria(cbCategoria);
+            // c.obtenerCodCategoria(cbCategoria);
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCat.SelectedIndex > 0)
+            {
+                string[] cat = c.AsociarCategoria(cbCat.Text);
+                txtCat.Text = cat[0];
+            }
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCliente.SelectedIndex > 0)
+            {
+                string[] cat = c.obtener_nombre(cbCliente.Text); ;
+                txtCliente.Text = cat[0];
+                textNom.Text = cat[1];
+                textApe1.Text = cat[2];
+                textApe2.Text = cat[3];
+            }
         }
     }
 }

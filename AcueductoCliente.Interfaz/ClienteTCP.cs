@@ -1,13 +1,12 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿#pragma warning disable CS0246 // The type or namespace name 'AcueductoServidor' could not be found (are you missing a using directive or an assembly reference?)
+#pragma warning disable CS0246 // The type or namespace name 'AcueductoServidor' could not be found (are you missing a using directive or an assembly reference?)
+using AcueductoServidor.Entidades;
+#pragma warning restore CS0246 // The type or namespace name 'AcueductoServidor' could not be found (are you missing a using directive or an assembly reference?)
+#pragma warning restore CS0246 // The type or namespace name 'AcueductoServidor' could not be found (are you missing a using directive or an assembly reference?)
+using Newtonsoft.Json;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using AcueductoServidor.Entidades;
 
 
 namespace AcueductoCliente.Interfaz

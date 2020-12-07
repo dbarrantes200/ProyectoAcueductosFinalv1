@@ -1,12 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcueductoCliente.Interfaz
@@ -79,6 +71,36 @@ namespace AcueductoCliente.Interfaz
                 textApellido1.Text = valores[1];
                 textApellido2.Text = valores[2];
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            // int lecActual = Convert.ToInt32(textMesActual);
+            int lecActual = Int32.Parse(textMesActual.Text);
+            //int lecAnterior = Convert.ToInt32(textMesAnterior);
+            int lecAnterior = Int32.Parse(textMesAnterior.Text);
+            //int tarifa = Convert.ToInt32(textTarifa);
+            int tarifa = Int32.Parse(textTarifa.Text);
+
+            int consumo = lecActual - lecAnterior;
+            int subTotal = consumo * tarifa;
+            double iva = subTotal * 0.13;
+            double total = subTotal * 1.13;
+
+            textConsumo.Text = Convert.ToString(consumo);
+            textIVA.Text = Convert.ToString(iva);
+            textMontoAntesIVA.Text = Convert.ToString(subTotal);
+            textMontoPagar.Text = Convert.ToString(total);
+
+
+
+            // MessageBox.Show(combo.montoCancelar(lecAnterior,lecActual, tarifa));
+            //MessageBox.Show(combo.montoCancelar(Int32.TryParse(textMesActual.Text), Convert.ToInt32(textMesAnterior), Convert.ToInt32(textTarifa)));
+            //MessageBox.Show(combo.montoCancelar.Convert.ToInt32(textMesActual.Text, textMesAnterior.Text, textTarifa.Text));
+            // MessageBox.Show(combo.montoCancelar(Convert.ToInt32(textMesActual.Text, textMesAnterior.Text, textTarifa.Text)));
+            //textMesActual.Text = "";
+            //textMesAnterior.Text = "";
         }
     }
 }

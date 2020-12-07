@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal
@@ -16,6 +9,14 @@ namespace ProyectoFinal
         public FormCategorias()
         {
             InitializeComponent();
+            c.cargarCategorias(DgvCategorias);
+        }
+
+        private void FormCategorias_Load(object sender, EventArgs e)
+        {
+            RbInsertar.Checked = true;
+            c.cargarCategorias(DgvCategorias);
+
         }
 
         private void RbInsertar_CheckedChanged(object sender, EventArgs e)
@@ -43,13 +44,13 @@ namespace ProyectoFinal
             BtnAgregar.Enabled = false;
             txtCategoria.Enabled = true;
             txtDescripcion.Enabled = true;
-            
+
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (c.categoriaRegistrada(Convert.ToInt32(txtCategoria.Text)) == 0)
-                {
+            {
                 MessageBox.Show(c.insertarCategoria(txtCategoria.Text, txtDescripcion.Text));
                 txtCategoria.Text = "";
                 txtDescripcion.Text = "";

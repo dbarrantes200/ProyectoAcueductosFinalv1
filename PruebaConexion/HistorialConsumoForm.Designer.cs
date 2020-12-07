@@ -46,6 +46,8 @@ namespace ProyectoFinal
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboMes = new System.Windows.Forms.ComboBox();
+            this.comboNIS = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPersonas)).BeginInit();
             this.GrabarConsumos.SuspendLayout();
             this.SuspendLayout();
@@ -163,19 +165,21 @@ namespace ProyectoFinal
             // 
             // txtMes
             // 
-            this.txtMes.Location = new System.Drawing.Point(248, 258);
+            this.txtMes.Location = new System.Drawing.Point(514, 739);
             this.txtMes.Margin = new System.Windows.Forms.Padding(6);
             this.txtMes.Name = "txtMes";
             this.txtMes.Size = new System.Drawing.Size(386, 31);
             this.txtMes.TabIndex = 26;
+            this.txtMes.Visible = false;
             // 
             // txtNIS
             // 
-            this.txtNIS.Location = new System.Drawing.Point(250, 200);
+            this.txtNIS.Location = new System.Drawing.Point(514, 683);
             this.txtNIS.Margin = new System.Windows.Forms.Padding(6);
             this.txtNIS.Name = "txtNIS";
             this.txtNIS.Size = new System.Drawing.Size(386, 31);
             this.txtNIS.TabIndex = 25;
+            this.txtNIS.Visible = false;
             // 
             // label4
             // 
@@ -227,12 +231,48 @@ namespace ProyectoFinal
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboMes
+            // 
+            this.comboMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMes.FormattingEnabled = true;
+            this.comboMes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboMes.Location = new System.Drawing.Point(250, 264);
+            this.comboMes.Name = "comboMes";
+            this.comboMes.Size = new System.Drawing.Size(386, 33);
+            this.comboMes.TabIndex = 35;
+            this.comboMes.UseWaitCursor = true;
+            this.comboMes.SelectedIndexChanged += new System.EventHandler(this.comboMes_SelectedIndexChanged);
+            // 
+            // comboNIS
+            // 
+            this.comboNIS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNIS.FormattingEnabled = true;
+            this.comboNIS.Location = new System.Drawing.Point(250, 204);
+            this.comboNIS.Name = "comboNIS";
+            this.comboNIS.Size = new System.Drawing.Size(382, 33);
+            this.comboNIS.TabIndex = 36;
+            this.comboNIS.SelectedIndexChanged += new System.EventHandler(this.comboNIS_SelectedIndexChanged);
+            // 
             // HistorialConsumoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(938, 799);
+            this.Controls.Add(this.comboNIS);
+            this.Controls.Add(this.comboMes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.DgvPersonas);
@@ -275,5 +315,7 @@ namespace ProyectoFinal
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboNIS;
+        protected System.Windows.Forms.ComboBox comboMes;
     }
 }

@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal
 {
     public partial class FormMenu : Form
     {
-       // Conexion c = new Conexion();
-       // SqlConnection cn;
-       // SqlCommand cmd;
-       // SqlDataReader dr;
+        // Conexion c = new Conexion();
+        // SqlConnection cn;
+        // SqlCommand cmd;
+        // SqlDataReader dr;
         public FormMenu()
         {
             InitializeComponent();

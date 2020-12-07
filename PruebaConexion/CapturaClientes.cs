@@ -23,13 +23,13 @@ namespace ProyectoFinal
             BtnAgregar.Enabled = true;
             BtnEliminar.Enabled = false;
             BtnModificar.Enabled = false;
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             RbInsertar.Checked = true;
-            Conexion c = new Conexion();
+            //Conexion c = new Conexion();
             c.cargarClientes(DgvClientes);
 
         }

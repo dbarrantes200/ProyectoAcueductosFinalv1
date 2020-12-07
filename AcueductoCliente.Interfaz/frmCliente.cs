@@ -1,13 +1,6 @@
 ﻿using ProyectoFinal;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AcueductoCliente.Interfaz
@@ -25,7 +18,7 @@ namespace AcueductoCliente.Interfaz
             btnConectar.Enabled = true;
         }
 
-       // public object ClienteTCP { get; private set; }
+        // public object ClienteTCP { get; private set; }
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
@@ -63,7 +56,7 @@ namespace AcueductoCliente.Interfaz
             {
                 MessageBox.Show("Debe conectarse primero con el servidor", "No es posible realizar la acción solicitada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
+
         }
 
         private void btnDesconectar_Click(object sender, EventArgs e)
@@ -99,18 +92,14 @@ namespace AcueductoCliente.Interfaz
 
         private void txtIdentificador_TextChanged(object sender, EventArgs e)
         {
-            // Validar que el cliente existe
-            if (c.personaRegistrada(Convert.ToInt32(txtIdentificador.Text)) != 0)
-            {
-                //MessageBox.Show(c.insertar(txtId.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text, txtCorreo.Text, txtCelular.Text));
-                // txtId.Text = "";
-                MessageBox.Show("Imposible if, El registro ya existe");
 
-            }
-            else
-            {
-                MessageBox.Show("Imposible de registrar else, El registro ya existe");
-            }
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'gOTADataSet.CLIENTES' table. You can move, or remove it, as needed.
+            this.cLIENTESTableAdapter.Fill(this.gOTADataSet.CLIENTES);
+
         }
     }
 }

@@ -111,6 +111,11 @@
     <Compile Include="FrmMontoCancelar.Designer.cs">
       <DependentUpon>FrmMontoCancelar.cs</DependentUpon>
     </Compile>
+    <Compile Include="GOTADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GOTADataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCliente.resx">
@@ -128,6 +133,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GOTADataSet.xsc">
+      <DependentUpon>GOTADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GOTADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GOTADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GOTADataSet.xss">
+      <DependentUpon>GOTADataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

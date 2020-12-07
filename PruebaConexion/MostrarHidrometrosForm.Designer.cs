@@ -48,16 +48,16 @@ namespace ProyectoFinal
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hIDROMETROSBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.hIDROMETROSDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.gOTADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIDROMETROSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hIDROMETROSBindingNavigator)).BeginInit();
@@ -117,7 +117,7 @@ namespace ProyectoFinal
             this.hIDROMETROSBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.hIDROMETROSBindingNavigator.Name = "hIDROMETROSBindingNavigator";
             this.hIDROMETROSBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hIDROMETROSBindingNavigator.Size = new System.Drawing.Size(1266, 45);
+            this.hIDROMETROSBindingNavigator.Size = new System.Drawing.Size(1501, 45);
             this.hIDROMETROSBindingNavigator.TabIndex = 0;
             this.hIDROMETROSBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -216,6 +216,49 @@ namespace ProyectoFinal
             this.hIDROMETROSBindingNavigatorSaveItem.Text = "Save Data";
             this.hIDROMETROSBindingNavigatorSaveItem.Click += new System.EventHandler(this.hIDROMETROSBindingNavigatorSaveItem_Click);
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(54, 39);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Location = new System.Drawing.Point(369, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(487, 55);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Lista de Hidrometros";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(128, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(916, 61);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Acueductos y Alcantarillados la Gota";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(618, 635);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 48);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // hIDROMETROSDataGridView
             // 
             this.hIDROMETROSDataGridView.AutoGenerateColumns = false;
@@ -227,12 +270,12 @@ namespace ProyectoFinal
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.hIDROMETROSDataGridView.DataSource = this.hIDROMETROSBindingSource;
-            this.hIDROMETROSDataGridView.Location = new System.Drawing.Point(60, 210);
+            this.hIDROMETROSDataGridView.Location = new System.Drawing.Point(94, 307);
             this.hIDROMETROSDataGridView.Name = "hIDROMETROSDataGridView";
             this.hIDROMETROSDataGridView.RowHeadersWidth = 82;
             this.hIDROMETROSDataGridView.RowTemplate.Height = 33;
-            this.hIDROMETROSDataGridView.Size = new System.Drawing.Size(1120, 220);
-            this.hIDROMETROSDataGridView.TabIndex = 1;
+            this.hIDROMETROSDataGridView.Size = new System.Drawing.Size(1157, 220);
+            this.hIDROMETROSDataGridView.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -274,59 +317,16 @@ namespace ProyectoFinal
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 200;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(369, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(487, 55);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Lista de Hidrometros";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(128, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(916, 61);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Acueductos y Alcantarillados la Gota";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(467, 499);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 48);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Cerrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(54, 39);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
             // MostrarHidrometrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1266, 570);
+            this.ClientSize = new System.Drawing.Size(1501, 768);
+            this.Controls.Add(this.hIDROMETROSDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.hIDROMETROSDataGridView);
             this.Controls.Add(this.hIDROMETROSBindingNavigator);
             this.Name = "MostrarHidrometrosForm";
             this.Text = "MostrarHidrometrosForm";
@@ -360,15 +360,15 @@ namespace ProyectoFinal
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hIDROMETROSBindingNavigatorSaveItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.DataGridView hIDROMETROSDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
     }
 }

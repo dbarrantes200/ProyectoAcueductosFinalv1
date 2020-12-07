@@ -29,11 +29,14 @@ namespace ProyectoFinal
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button5 = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtCat = new System.Windows.Forms.TextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,12 +50,19 @@ namespace ProyectoFinal
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbCat = new System.Windows.Forms.ComboBox();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textNom = new System.Windows.Forms.TextBox();
+            this.textApe1 = new System.Windows.Forms.TextBox();
+            this.textApe2 = new System.Windows.Forms.TextBox();
+            this.DgvHidrometros = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvHidrometros)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(426, 595);
+            this.button5.Location = new System.Drawing.Point(565, 1024);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(218, 61);
             this.button5.TabIndex = 39;
@@ -91,18 +101,19 @@ namespace ProyectoFinal
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // txtCategoria
+            // txtCat
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(328, 437);
-            this.txtCategoria.Margin = new System.Windows.Forms.Padding(6);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(386, 31);
-            this.txtCategoria.TabIndex = 35;
-            this.txtCategoria.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
+            this.txtCat.Location = new System.Drawing.Point(769, 440);
+            this.txtCat.Margin = new System.Windows.Forms.Padding(6);
+            this.txtCat.Name = "txtCat";
+            this.txtCat.ReadOnly = true;
+            this.txtCat.Size = new System.Drawing.Size(310, 31);
+            this.txtCat.TabIndex = 35;
+            this.txtCat.TextChanged += new System.EventHandler(this.txtCategoria_TextChanged);
             // 
             // txtSerie
             // 
-            this.txtSerie.Location = new System.Drawing.Point(328, 368);
+            this.txtSerie.Location = new System.Drawing.Point(319, 368);
             this.txtSerie.Margin = new System.Windows.Forms.Padding(6);
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(386, 31);
@@ -110,7 +121,7 @@ namespace ProyectoFinal
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(328, 296);
+            this.txtMarca.Location = new System.Drawing.Point(319, 299);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(6);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(386, 31);
@@ -122,9 +133,9 @@ namespace ProyectoFinal
             this.label5.Location = new System.Drawing.Point(87, 443);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.Size = new System.Drawing.Size(230, 25);
             this.label5.TabIndex = 32;
-            this.label5.Text = "Categoría:";
+            this.label5.Text = "Descripcion/Categoría:";
             // 
             // label3
             // 
@@ -148,7 +159,7 @@ namespace ProyectoFinal
             // 
             // txtNIS
             // 
-            this.txtNIS.Location = new System.Drawing.Point(328, 231);
+            this.txtNIS.Location = new System.Drawing.Point(319, 231);
             this.txtNIS.Margin = new System.Windows.Forms.Padding(6);
             this.txtNIS.Name = "txtNIS";
             this.txtNIS.Size = new System.Drawing.Size(386, 31);
@@ -211,11 +222,12 @@ namespace ProyectoFinal
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(328, 497);
+            this.txtCliente.Location = new System.Drawing.Point(769, 497);
             this.txtCliente.Margin = new System.Windows.Forms.Padding(6);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(386, 31);
+            this.txtCliente.Size = new System.Drawing.Size(309, 31);
             this.txtCliente.TabIndex = 41;
+            this.txtCliente.Visible = false;
             // 
             // label4
             // 
@@ -223,32 +235,124 @@ namespace ProyectoFinal
             this.label4.Location = new System.Drawing.Point(87, 503);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 25);
+            this.label4.Size = new System.Drawing.Size(217, 25);
             this.label4.TabIndex = 40;
-            this.label4.Text = "Cliente:";
+            this.label4.Text = "Cliente/Identificacion:";
             // 
-            // cbCategoria
+            // cbCat
             // 
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(744, 435);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(300, 33);
-            this.cbCategoria.TabIndex = 43;
+            this.cbCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCat.FormattingEnabled = true;
+            this.cbCat.Location = new System.Drawing.Point(319, 435);
+            this.cbCat.Name = "cbCat";
+            this.cbCat.Size = new System.Drawing.Size(386, 33);
+            this.cbCat.TabIndex = 43;
+            this.cbCat.SelectedIndexChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(319, 495);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(386, 33);
+            this.cbCliente.TabIndex = 44;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(87, 568);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(201, 25);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Nombre del Cliente:";
+            // 
+            // textNom
+            // 
+            this.textNom.Location = new System.Drawing.Point(319, 562);
+            this.textNom.Margin = new System.Windows.Forms.Padding(6);
+            this.textNom.Name = "textNom";
+            this.textNom.ReadOnly = true;
+            this.textNom.Size = new System.Drawing.Size(155, 31);
+            this.textNom.TabIndex = 46;
+            // 
+            // textApe1
+            // 
+            this.textApe1.Location = new System.Drawing.Point(500, 562);
+            this.textApe1.Margin = new System.Windows.Forms.Padding(6);
+            this.textApe1.Name = "textApe1";
+            this.textApe1.ReadOnly = true;
+            this.textApe1.Size = new System.Drawing.Size(155, 31);
+            this.textApe1.TabIndex = 47;
+            // 
+            // textApe2
+            // 
+            this.textApe2.Location = new System.Drawing.Point(678, 562);
+            this.textApe2.Margin = new System.Windows.Forms.Padding(6);
+            this.textApe2.Name = "textApe2";
+            this.textApe2.ReadOnly = true;
+            this.textApe2.Size = new System.Drawing.Size(155, 31);
+            this.textApe2.TabIndex = 48;
+            // 
+            // DgvHidrometros
+            // 
+            this.DgvHidrometros.AllowUserToAddRows = false;
+            this.DgvHidrometros.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvHidrometros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvHidrometros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvHidrometros.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvHidrometros.Location = new System.Drawing.Point(92, 670);
+            this.DgvHidrometros.Margin = new System.Windows.Forms.Padding(6);
+            this.DgvHidrometros.Name = "DgvHidrometros";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvHidrometros.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvHidrometros.RowHeadersVisible = false;
+            this.DgvHidrometros.RowHeadersWidth = 82;
+            this.DgvHidrometros.Size = new System.Drawing.Size(1262, 301);
+            this.DgvHidrometros.TabIndex = 49;
             // 
             // FormHidrometros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1122, 712);
-            this.Controls.Add(this.cbCategoria);
+            this.ClientSize = new System.Drawing.Size(1484, 1154);
+            this.Controls.Add(this.DgvHidrometros);
+            this.Controls.Add(this.textApe2);
+            this.Controls.Add(this.textApe1);
+            this.Controls.Add(this.textNom);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbCliente);
+            this.Controls.Add(this.cbCat);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.txtCat);
             this.Controls.Add(this.txtSerie);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label5);
@@ -263,6 +367,7 @@ namespace ProyectoFinal
             this.Name = "FormHidrometros";
             this.Text = "Ingreso de Hidrometros";
             this.Load += new System.EventHandler(this.FormHidrometros_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvHidrometros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +379,7 @@ namespace ProyectoFinal
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtCat;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label5;
@@ -288,6 +393,12 @@ namespace ProyectoFinal
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.ComboBox cbCat;
+        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textNom;
+        private System.Windows.Forms.TextBox textApe1;
+        private System.Windows.Forms.TextBox textApe2;
+        private System.Windows.Forms.DataGridView DgvHidrometros;
     }
 }

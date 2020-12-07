@@ -29,6 +29,9 @@ namespace ProyectoFinal
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbRegistrar = new System.Windows.Forms.RadioButton();
             this.rRModificar = new System.Windows.Forms.RadioButton();
             this.rBEliminar = new System.Windows.Forms.RadioButton();
@@ -45,6 +48,8 @@ namespace ProyectoFinal
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.DgvFuncionarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFuncionarios)).BeginInit();
             this.SuspendLayout();
             // 
             // rbRegistrar
@@ -196,7 +201,7 @@ namespace ProyectoFinal
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(417, 528);
+            this.button5.Location = new System.Drawing.Point(511, 915);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(218, 61);
             this.button5.TabIndex = 23;
@@ -204,12 +209,50 @@ namespace ProyectoFinal
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // DgvFuncionarios
+            // 
+            this.DgvFuncionarios.AllowUserToAddRows = false;
+            this.DgvFuncionarios.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFuncionarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvFuncionarios.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvFuncionarios.Location = new System.Drawing.Point(73, 529);
+            this.DgvFuncionarios.Margin = new System.Windows.Forms.Padding(6);
+            this.DgvFuncionarios.Name = "DgvFuncionarios";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFuncionarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvFuncionarios.RowHeadersVisible = false;
+            this.DgvFuncionarios.RowHeadersWidth = 82;
+            this.DgvFuncionarios.Size = new System.Drawing.Size(1115, 301);
+            this.DgvFuncionarios.TabIndex = 50;
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1080, 655);
+            this.ClientSize = new System.Drawing.Size(1269, 1043);
+            this.Controls.Add(this.DgvFuncionarios);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnEliminar);
@@ -229,6 +272,7 @@ namespace ProyectoFinal
             this.Name = "FormFuncionarios";
             this.Text = "Ingreso de Funcionarios";
             this.Load += new System.EventHandler(this.FormFuncionarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvFuncionarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +296,6 @@ namespace ProyectoFinal
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView DgvFuncionarios;
     }
 }

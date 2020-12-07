@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -18,6 +13,7 @@ namespace ProyectoFinal
         SqlDataAdapter da;
         DataTable dt;
 
+        // Metodo Conexion para conectarse a la base de datos
         public Conexion()
         {
             try
@@ -232,7 +228,7 @@ namespace ProyectoFinal
             // return contador;
         }
 
-
+        //Metodo para llenar la tabla cuando se crea un cliente en el formulario CapturaClientes
         public void cargarClientes(DataGridView dgv)
         {
             try
@@ -247,6 +243,59 @@ namespace ProyectoFinal
                 MessageBox.Show("No se pudo llenar el Datagridview: " + ex.ToString());
             }
         }
+
+
+
+        //Metodo para llenar la tabla cuando se crea una categoria en el formulario Categorias
+        public void cargarCategorias(DataGridView dgv1)
+        {
+            try
+            {
+                da = new SqlDataAdapter("Select * from CATEGORIAS", cn);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar el Datagridview: " + ex.ToString());
+            }
+        }
+
+
+        //Metodo para llenar la tabla cuando se crea una categoria en el formulario Registro de Hidrometros
+        public void cargarHidrometros(DataGridView dgv1)
+        {
+            try
+            {
+                da = new SqlDataAdapter("Select * from HIDROMETROS", cn);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar el Datagridview: " + ex.ToString());
+            }
+        }
+
+
+        //Metodo para llenar la tabla cuando se crea una categoria en el formulario Registro de Funcionarios
+        public void cargarFuncionarios(DataGridView dgv1)
+        {
+            try
+            {
+                da = new SqlDataAdapter("Select * from FUNCIONARIOS", cn);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar el Datagridview: " + ex.ToString());
+            }
+        }
+
 
 
         public void llenarCategorias(ComboBox cb)
@@ -270,16 +319,14 @@ namespace ProyectoFinal
 
         }
 
-        public void obtenerCodCategoria(string descripcion)
+        public void ObtenerCodCategoria(string descripcion)
         {
             try
             {
-                // cmd = new SqlCommand("Select * from HIDROMETROS where NIS=" + NIS + "", cn);
-                cmd = new SqlCommand("Select CODCATEGORIA from CATEGORIAS where  = "+ descripcion  + "", cn);
+                cmd = new SqlCommand("Select CODCATEGORIA from CATEGORIAS where  = " + descripcion + "", cn);
                 dr = cmd.ExecuteReader();
                 MessageBox.Show("La descripcion:" + descripcion);
                 dr.Close();
-
             }
             catch (Exception ex)
             {
@@ -288,10 +335,177 @@ namespace ProyectoFinal
 
         }
 
+        public string[] AsociarCategoria(string desc)
+        {
+            string[] res = null;
+            try
+            {
+                cn.Close();
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("select * from CATEGORIAS where DESCRIPCION='" + desc + "'", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string[] cat =
+                    {
+                    dr[0].ToString(),
+                    dr[1].ToString()
+                    };
+                    res = cat;
+                }
+                cn.Close();
+                cn.Open();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se encontro la categoria o la conexion: " + ex.ToString());
+            }
+            return res;
 
 
+        }
+
+
+        // metodo para cargar clientes en un combbox
+        public void cargar_clientes(ComboBox clientes)
+        {
+
+            try
+            {
+                //cn.Close();
+                //cn.Open();
+                SqlCommand cmd = new SqlCommand("select IDENTIFICACION, NOMBRE, APELLIDO1, APELLIDO2 from CLIENTES", cn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                //cn.Close();
+
+                DataRow fila = dt.NewRow();
+                fila["IDENTIFICACION"] = "Selecciona un Cliente";
+                dt.Rows.InsertAt(fila, 0);
+
+
+                clientes.ValueMember = "IDENTIFICACION";
+                clientes.DisplayMember = "IDENTIFICACION";
+                clientes.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se logro cargar el combo box: " + ex.ToString());
+            }
+
+
+        }
+
+        public string[] obtener_nombre(string identificacion)
+        {
+            string[] resultado = null;
+            try
+            {
+                cn.Close();
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("select * from CLIENTES where IDENTIFICACION='" + identificacion + "'", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                //string[] resultado = null;
+                while (dr.Read())
+                {
+                    string[] valores =
+                    {
+                    dr[0].ToString(),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString()
+                };
+                    resultado = valores;
+                }
+                cn.Close();
+                cn.Open();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se logro cargar el combo box: " + ex.ToString());
+            }
+
+            return resultado;
+        }
+
+
+
+        // metodo para cargar lista de NIS en un combobox
+        public void CargarNIS(ComboBox ListaNIS)
+        {
+
+            try
+            {
+                //cn.Close();
+                //cn.Open();
+                SqlCommand cmd = new SqlCommand("select * from HIDROMETROS", cn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                //cn.Close();
+
+                DataRow fila = dt.NewRow();
+                fila["MARCA"] = "Selecciona un NIS";
+                dt.Rows.InsertAt(fila, 0);
+
+
+                ListaNIS.ValueMember = "NIS";
+                ListaNIS.DisplayMember = "NIS";
+                ListaNIS.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se logro cargar el combo box: " + ex.ToString());
+            }
+
+
+        }
+
+        public int[] Obtener_NIS(int NIS)
+        {
+            int[] resultado = null;
+            try
+            {
+                cn.Close();
+                cn.Open();
+                SqlCommand cmd = new SqlCommand("select * from HIDROMETROS where NIS='" + NIS + "'", cn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                //string[] resultado = null;
+                while (dr.Read())
+                {
+                    int[] valores =
+                    {
+                    (int)dr[0],
+                    (int)dr[1],
+                    (int)dr[2],
+                    (int)dr[3]
+                };
+                    resultado = valores;
+                }
+                cn.Close();
+                cn.Open();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se logro cargar el combo box: " + ex.ToString());
+            }
+
+            return resultado;
+        }
 
     }
-    
+
 
 }
+
+
+

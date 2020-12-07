@@ -116,7 +116,7 @@ namespace ProyectoFinal
             this.cLIENTESBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.cLIENTESBindingNavigator.Name = "cLIENTESBindingNavigator";
             this.cLIENTESBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cLIENTESBindingNavigator.Size = new System.Drawing.Size(1360, 50);
+            this.cLIENTESBindingNavigator.Size = new System.Drawing.Size(2720, 100);
             this.cLIENTESBindingNavigator.TabIndex = 0;
             this.cLIENTESBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -126,13 +126,13 @@ namespace ProyectoFinal
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(46, 44);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(46, 94);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(81, 44);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(81, 39);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -142,7 +142,7 @@ namespace ProyectoFinal
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(46, 44);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(46, 39);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -151,7 +151,7 @@ namespace ProyectoFinal
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(46, 44);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(46, 39);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -160,13 +160,13 @@ namespace ProyectoFinal
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(46, 44);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(46, 39);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 50);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 45);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -181,7 +181,7 @@ namespace ProyectoFinal
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 50);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 45);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -189,7 +189,7 @@ namespace ProyectoFinal
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(46, 44);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(46, 39);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -198,26 +198,29 @@ namespace ProyectoFinal
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(46, 44);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(46, 39);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 50);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 45);
             // 
             // cLIENTESBindingNavigatorSaveItem
             // 
             this.cLIENTESBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.cLIENTESBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("cLIENTESBindingNavigatorSaveItem.Image")));
             this.cLIENTESBindingNavigatorSaveItem.Name = "cLIENTESBindingNavigatorSaveItem";
-            this.cLIENTESBindingNavigatorSaveItem.Size = new System.Drawing.Size(46, 44);
+            this.cLIENTESBindingNavigatorSaveItem.Size = new System.Drawing.Size(46, 39);
             this.cLIENTESBindingNavigatorSaveItem.Text = "Save Data";
             this.cLIENTESBindingNavigatorSaveItem.Click += new System.EventHandler(this.cLIENTESBindingNavigatorSaveItem_Click);
             // 
             // cLIENTESDataGridView
             // 
+            this.cLIENTESDataGridView.AllowUserToAddRows = false;
+            this.cLIENTESDataGridView.AllowUserToDeleteRows = false;
             this.cLIENTESDataGridView.AutoGenerateColumns = false;
+            this.cLIENTESDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.cLIENTESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cLIENTESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -229,6 +232,7 @@ namespace ProyectoFinal
             this.cLIENTESDataGridView.DataSource = this.cLIENTESBindingSource;
             this.cLIENTESDataGridView.Location = new System.Drawing.Point(12, 229);
             this.cLIENTESDataGridView.Name = "cLIENTESDataGridView";
+            this.cLIENTESDataGridView.RowHeadersVisible = false;
             this.cLIENTESDataGridView.RowHeadersWidth = 82;
             this.cLIENTESDataGridView.RowTemplate.Height = 33;
             this.cLIENTESDataGridView.Size = new System.Drawing.Size(1289, 317);

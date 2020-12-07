@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinal
@@ -16,10 +9,11 @@ namespace ProyectoFinal
         public HistorialConsumoForm()
         {
             InitializeComponent();
+            c.CargarNIS(comboNIS);
         }
 
-     //   private void HistorialConsumoForm_Load(object sender, EventArgs e)
-       // {
+        //   private void HistorialConsumoForm_Load(object sender, EventArgs e)
+        // {
 
         //}
 
@@ -75,12 +69,30 @@ namespace ProyectoFinal
                 txtMes.Text = "";
                 //dtpFecha.Text = "";
                 txtLectura.Text = "";
-                
+
 
             }
             else
             {
                 MessageBox.Show("Imposible de registrar, El registro ya existe");
+            }
+        }
+
+        private void comboMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboMes.SelectedIndex > 0)
+            {
+
+                txtMes.Text = comboMes.Text;
+            }
+        }
+
+        private void comboNIS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboNIS.SelectedIndex > 0)
+            {
+                // int[] cat = c.CargarNIS(comboNIS.Text);
+                txtNIS.Text = comboNIS.Text;
             }
         }
     }
